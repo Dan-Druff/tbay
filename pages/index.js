@@ -8,14 +8,14 @@ export default function Home() {
   const d = new Date("July 17, 2022 01:15:00");
   const schedhule = {
     notyet:[],
-    seventeenth:[],
-    eighteenth:[],
-    nineteenth:[],
-    twentieth:[],
-    twentyfirst:[],
-    twentysecond:[],
-    twentythird:[],
-    twentyfourth:[]
+    seventeenth:[{event:'Dry Landing',id:1}],
+    eighteenth:[{event:'Da Vinci Night',id:2}],
+    nineteenth:[{event:'Bus Tour',id:3},{event:'Keg Party',id:4}],
+    twentieth:[{event:'Kids Day',id:5},{event:'Poker Night',id:6}],
+    twentyfirst:[{event:'Kids Day',id:7},{event:'Baseball',id:8},{event:'90s Night',id:9}],
+    twentysecond:[{event:'Camp/BBQ?',id:10},{event:'Concert?',id:11}],
+    twentythird:[{event:'Camp?',id:12},{event:'Banquet',id:13}],
+    twentyfourth:[{event:'Bye Bye BBQ',id:14}]
   }
   const days = {
     notyet:"↑ Select A Day ↑",
@@ -30,33 +30,42 @@ export default function Home() {
   }
  
   const [dateSelected, setDateSelected] = useState({date:days.notyet});
+  const [events, setEvents] = useState([{event:"R U READY!!??", id:0}]);
 
   const clickDay = (day) => {
     console.log("Day clicked/...", day);
     switch (day) {
       case '17':
         setDateSelected({date:days.seventeenth})
+        setEvents(schedhule.seventeenth);
         break;
       case '18':
         setDateSelected({date:days.eighteenth});
+        setEvents(schedhule.eighteenth);
         break;
       case '19':
         setDateSelected({date:days.nineteenth});
+        setEvents(schedhule.nineteenth);
         break;
       case '20':
         setDateSelected({date:days.twentieth});
+        setEvents(schedhule.twentieth);
         break;
       case '21':
         setDateSelected({date:days.twentyfirst})
+        setEvents(schedhule.twentyfirst);
         break;
       case '22':
         setDateSelected({date:days.twentysecond});
+        setEvents(schedhule.twentysecond);
         break;
       case '23':
         setDateSelected({date:days.twentythird});
+        setEvents(schedhule.twentythird);
         break;
       case '24':
         setDateSelected({date:days.twentyfourth});
+        setEvents(schedhule.twentyfourth);
         break;
     
       default:
@@ -81,36 +90,37 @@ export default function Home() {
         <div className={styles.grid}>
         <button onClick={() => clickDay('17')} className={styles.card}>
             <h2>Sunday July 17</h2>
-            <p>Description</p>
+            <p>descripton</p>
+            
           </button>
           <button onClick={() => clickDay('18')} className={styles.card}>
             <h2>Monday July 18</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
           <button onClick={() => clickDay('19')} className={styles.card}>
             <h2>Tuesday July 19</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
 
           <button onClick={() => clickDay('20')}className={styles.card}>
             <h2>Wednesday July 20</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
           <button onClick={() => clickDay('21')} className={styles.card}>
             <h2>Thursday July 21</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
           <button onClick={() => clickDay('22')} className={styles.card}>
             <h2>Friday July 22</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
           <button onClick={() => clickDay('23')} className={styles.card}>
             <h2>Saturday July 23</h2>
-            <p>Description</p>
+            <p>descripton</p>
           </button>
           <button onClick={() => clickDay('24')} className={styles.card}>
             <h2>Sunday July 24</h2>
-            <p>Description</p>
+         <p>descripton</p>
           </button>
         </div>
 
@@ -118,9 +128,12 @@ export default function Home() {
           <div className={styles.daydiv}>
 
             <h2 className={styles.dayHeader}>{dateSelected.date}</h2>
-            <p>Texty lorem ipsum whatever</p>
-            <p>Maybe map through stuff for a list?</p>
-            <p>Texty lorem ipsum whatever</p>
+            {events.map((e) => {
+              return (
+                <h4 key={e.id}>{e.event}</h4>
+              )
+            })}
+     
           </div>
        
         </div>

@@ -31,9 +31,10 @@ export default function Home() {
  
   const [dateSelected, setDateSelected] = useState({date:days.notyet});
   const [events, setEvents] = useState([{event:"R U READY!!??", id:0}]);
-
+  const [jello,setJello] = useState('');
   const clickDay = (day) => {
     console.log("Day clicked/...", day);
+    setJello('jellovertical');
     switch (day) {
       case '17':
         setDateSelected({date:days.seventeenth})
@@ -84,48 +85,49 @@ export default function Home() {
       <main className={styles.main}>
      
 
-        <h1>tbay 90s week</h1>
+        <h1 className={`${styles.title} ${styles.jellovertical}`}>tbay 90s week</h1>
    
        
         <div className={styles.grid}>
         <button onClick={() => clickDay('17')} className={styles.card}>
+          
             <h2>Sunday July 17</h2>
-            <p>descripton</p>
+            <p>Arrivals</p>
             
           </button>
           <button onClick={() => clickDay('18')} className={styles.card}>
             <h2>Monday July 18</h2>
-            <p>descripton</p>
+            <p>Da Vinci Night</p>
           </button>
           <button onClick={() => clickDay('19')} className={styles.card}>
             <h2>Tuesday July 19</h2>
-            <p>descripton</p>
+            <p>Bus Tour</p>
           </button>
 
           <button onClick={() => clickDay('20')}className={styles.card}>
             <h2>Wednesday July 20</h2>
-            <p>descripton</p>
+            <p>Poker Night</p>
           </button>
           <button onClick={() => clickDay('21')} className={styles.card}>
             <h2>Thursday July 21</h2>
-            <p>descripton</p>
+            <p>90's Night</p>
           </button>
           <button onClick={() => clickDay('22')} className={styles.card}>
             <h2>Friday July 22</h2>
-            <p>descripton</p>
+            <p>Concert</p>
           </button>
           <button onClick={() => clickDay('23')} className={styles.card}>
             <h2>Saturday July 23</h2>
-            <p>descripton</p>
+            <p>Banquet</p>
           </button>
           <button onClick={() => clickDay('24')} className={styles.card}>
             <h2>Sunday July 24</h2>
-         <p>descripton</p>
+         <p>BBQ</p>
           </button>
         </div>
 
         <div className={styles.daygrid}>
-          <div className={styles.daydiv}>
+          <div className={`${styles.daydiv} ${styles.jellovertical}`}>
 
             <h2 className={styles.dayHeader}>{dateSelected.date}</h2>
             {events.map((e) => {

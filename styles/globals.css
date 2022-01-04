@@ -1,9 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
 html,
 body {
+  background: -moz-linear-gradient(
+    136deg,
+    #ffff00 0%,
+    #00bcd4 50%,
+    #ee82ee 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(
+    136deg,
+    #ffff00 0%,
+    #00bcd4 50%,
+    #ee82ee 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(136deg, #ffff00 0%, #00bcd4 50%, #ee82ee 100%);
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee82ee', endColorstr='#FFFF00', GradientType=1 );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(
+    136deg,
+    #ffff00 0%,
+    #00bcd4 50%,
+    #ee82ee 100%
+  );
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(136deg, #ffff00 0%, #00bcd4 50%, #ee82ee 100%);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Amatic SC", cursive;
 }
 
 a {

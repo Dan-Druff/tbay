@@ -110,7 +110,7 @@ export default function Home() {
           </button>
           <button onClick={() => clickDay('21')} className={styles.card}>
             <h2>Thursday July 21</h2>
-            <p>90's Night</p>
+            <p>90s Night</p>
           </button>
           <button onClick={() => clickDay('22')} className={styles.card}>
             <h2>Friday July 22</h2>
